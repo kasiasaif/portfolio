@@ -170,8 +170,8 @@
 }
 
 [data-theme="light"] .overlay__label {
-  --btn-shine: rgba(60, 90, 130, 0.28);
-  --btn-shine-core: rgba(20, 45, 80, 0.45);
+  --btn-shine: rgba(15, 118, 110, 0.28);
+  --btn-shine-core: rgba(10, 70, 75, 0.45);
 }
 
 .overlay__nav a:hover .btn__text::after,

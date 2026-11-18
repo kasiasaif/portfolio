@@ -5,6 +5,7 @@ export type Project = {
   homepage: string | null;
   language: string | null;
   updated_at: string;
+  stack: string[];
 };
 
 export const fallbackProjects: Project[] = [
@@ -16,6 +17,7 @@ export const fallbackProjects: Project[] = [
     homepage: "https://tescgsm.es/",
     language: "TypeScript",
     updated_at: "2026-11-04T18:19:50Z",
+    stack: ["React", "Vite", "React Router", "MySQL", "Node.js"],
   },
   {
     name: "tescgsm-admin",
@@ -25,6 +27,7 @@ export const fallbackProjects: Project[] = [
     homepage: "https://tescgsm-admin.onrender.com",
     language: "TypeScript",
     updated_at: "2026-11-04T18:19:21Z",
+    stack: ["React", "Vite", "React Router", "MySQL", "PostgreSQL", "Nodemailer", "Render"],
   },
   {
     name: "linen-housekeeping",
@@ -34,6 +37,7 @@ export const fallbackProjects: Project[] = [
     homepage: "https://www.linenhousekeeping.co.uk/",
     language: "TypeScript",
     updated_at: "2026-10-19T08:17:59Z",
+    stack: ["React", "Vite", "Express", "MongoDB", "Nodemailer"],
   },
   {
     name: "holt-fenwick",
@@ -43,6 +47,7 @@ export const fallbackProjects: Project[] = [
     homepage: "https://kasiasaif.github.io/holt-fenwick/",
     language: "TypeScript",
     updated_at: "2026-09-20T20:24:15Z",
+    stack: ["React", "Vite", "React Router"],
   },
   {
     name: "beautyservice",
@@ -52,6 +57,7 @@ export const fallbackProjects: Project[] = [
     homepage: "https://kasiasaif.github.io/beautyservice/",
     language: "TypeScript",
     updated_at: "2026-09-20T19:39:36Z",
+    stack: ["React", "Vite", "React Router"],
   },
   {
     name: "orange-home-health",
@@ -61,6 +67,7 @@ export const fallbackProjects: Project[] = [
     homepage: null,
     language: "HTML",
     updated_at: "2026-09-20T19:42:57Z",
+    stack: ["HTML", "CSS", "JavaScript"],
   },
 ];
 

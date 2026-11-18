@@ -32,30 +32,20 @@ export function Projects() {
           fork: boolean;
         }>;
 
-        const curated = new Map(
-          fallbackProjects.map((project) => [project.name, project.description]),
+        const remoteByName = new Map(
+          data.filter((repo) => !repo.fork).map((repo) => [repo.name, repo]),
         );
 
-        const mapped = data
-          .filter((repo) => !repo.fork)
-          .slice(0, 6)
-          .map((repo) => {
-            const raw = repo.description ?? "";
-            const cleaned = raw
-              .replace(/\s*Secrets stay in \.env(?: and Render)?, not git\.?/gi, "")
-              .trim();
-
-            return {
-              name: repo.name,
-              description:
-                curated.get(repo.name) ??
-                (cleaned || "A recent project from GitHub."),
-              html_url: repo.html_url,
-              homepage: repo.homepage,
-              language: repo.language,
-              updated_at: repo.updated_at,
-            };
-          });
+        const mapped = fallbackProjects.map((project) => {
+          const remote = remoteByName.get(project.name);
+          return {
+            ...project,
+            html_url: remote?.html_url ?? project.html_url,
+            homepage: remote?.homepage ?? project.homepage,
+            language: remote?.language ?? project.language,
+            updated_at: remote?.updated_at ?? project.updated_at,
+          };
+        });
 
         if (!cancelled && mapped.length) setProjects(mapped);
       } catch {
@@ -101,6 +91,13 @@ export function Projects() {
               </div>
               <h3>{formatProjectTitle(project.name)}</h3>
               <p>{project.description}</p>
+              {project.stack.length > 0 ? (
+                <ul className="work__stack" aria-label="Third-party tools">
+                  {project.stack.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
               <div className="work__links">
                 <a href={project.html_url} target="_blank" rel="noreferrer">
                   Code

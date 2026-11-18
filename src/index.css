@@ -40,39 +40,45 @@
 }
 
 [data-theme="light"] {
-  --bg: #f4f7fb;
-  --bg-deep: #e8eef6;
+  --bg: #eef4fa;
+  --bg-deep: #dce7f3;
   --surface: #ffffff;
-  --navy: #d9e4f2;
-  --line: rgba(30, 60, 100, 0.12);
-  --line-strong: rgba(40, 80, 130, 0.22);
-  --text: #0d1520;
-  --text-muted: #5a6b82;
-  --accent: #3d6ea8;
-  --accent-bright: #2a5a92;
-  --accent-soft: rgba(60, 110, 170, 0.12);
-  --shine: rgba(40, 80, 140, 0.35);
-  --hero-glow: rgba(90, 140, 200, 0.35);
-  --hero-glow-mid: rgba(120, 160, 210, 0.2);
-  --hero-glow-soft: rgba(160, 190, 230, 0.12);
-  --hero-wash-a: rgba(140, 180, 230, 0.45);
-  --hero-wash-b: rgba(160, 195, 235, 0.28);
-  --hero-wash-c: rgba(190, 215, 240, 0.18);
-  --hero-wash-d: rgba(220, 232, 245, 0.12);
-  --hero-base-top: #eef3f9;
-  --hero-base-mid: #f4f7fb;
-  --hero-base-bottom: #f8fafc;
-  --overlay-bg: rgba(244, 247, 251, 0.94);
-  --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(236, 243, 250, 0.98));
-  --panel-glow: rgba(100, 150, 210, 0.18);
-  --footer-bg: linear-gradient(180deg, rgba(236, 243, 250, 0.7), rgba(228, 236, 246, 0.98));
-  --footer-glow: rgba(100, 150, 210, 0.16);
-  --card-bg: rgba(255, 255, 255, 0.72);
-  --card-shine: rgba(255, 255, 255, 0.7);
-  --btn-light-bg: linear-gradient(180deg, #1a3355 0%, #142844 100%);
-  --btn-light-ink: #f4f7fb;
-  --portrait-border: rgba(60, 100, 150, 0.22);
+  --navy: #c5d6ea;
+  --line: rgba(18, 52, 92, 0.12);
+  --line-strong: rgba(22, 78, 128, 0.24);
+  --text: #091525;
+  --text-muted: #4a6078;
+  --accent: #0f766e;
+  --accent-bright: #0b5f59;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --shine: rgba(15, 100, 110, 0.28);
+  --hero-glow: rgba(56, 160, 170, 0.28);
+  --hero-glow-mid: rgba(90, 170, 190, 0.16);
+  --hero-glow-soft: rgba(150, 200, 215, 0.12);
+  --hero-wash-a: rgba(70, 160, 175, 0.38);
+  --hero-wash-b: rgba(110, 175, 200, 0.24);
+  --hero-wash-c: rgba(160, 200, 220, 0.14);
+  --hero-wash-d: rgba(210, 228, 240, 0.1);
+  --hero-base-top: #e6f1f5;
+  --hero-base-mid: #eef4fa;
+  --hero-base-bottom: #f5f8fc;
+  --overlay-bg: rgba(238, 244, 250, 0.96);
+  --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 246, 0.98));
+  --panel-glow: rgba(15, 118, 110, 0.14);
+  --footer-bg: linear-gradient(180deg, rgba(232, 242, 246, 0.75), rgba(220, 234, 242, 0.98));
+  --footer-glow: rgba(15, 118, 110, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-shine: rgba(255, 255, 255, 0.9);
+  --btn-light-bg: linear-gradient(180deg, #0f3d42 0%, #0a2c30 100%);
+  --btn-light-ink: #f3fbfb;
+  --portrait-border: rgba(15, 118, 110, 0.28);
   color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(120, 190, 200, 0.22), transparent 55%),
+    linear-gradient(180deg, #e6f1f5 0%, #eef4fa 35%, #f5f8fc 100%);
 }
 
 *,
@@ -263,8 +269,9 @@ img {
 }
 
 [data-theme="light"] .btn--ghost {
-  --btn-shine: rgba(60, 90, 130, 0.35);
-  --btn-shine-core: rgba(20, 40, 70, 0.55);
+  --btn-shine: rgba(15, 118, 110, 0.28);
+  --btn-shine-core: rgba(10, 70, 75, 0.5);
+  background: rgba(255, 255, 255, 0.75);
 }
 
 @keyframes text-light {
