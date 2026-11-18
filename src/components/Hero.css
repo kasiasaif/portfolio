@@ -1,0 +1,232 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: 6.5rem 0 3.5rem;
+}
+
+.hero__atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      var(--hero-wash-a) 0%,
+      var(--hero-wash-b) 16%,
+      var(--hero-wash-c) 28%,
+      var(--hero-wash-d) 40%,
+      transparent 52%
+    ),
+    linear-gradient(
+      180deg,
+      var(--hero-base-top) 0%,
+      var(--hero-base-mid) 45%,
+      var(--hero-base-bottom) 100%
+    );
+}
+
+.hero__columns {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(150, 185, 230, 0.05) 0,
+    rgba(150, 185, 230, 0.05) 1px,
+    transparent 1px,
+    transparent calc(100% / 6)
+  );
+  mask-image: linear-gradient(180deg, black 20%, transparent 95%);
+  opacity: 0.55;
+}
+
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 38rem;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.hero__status {
+  margin: 0 0 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0;
+  animation: rise 0.8s var(--ease) 0.1s forwards;
+}
+
+.hero__title {
+  margin: 0 0 1.25rem;
+  min-height: 1.15em;
+  font-size: clamp(2rem, 5.8vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.hero__cursor {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.9em;
+  margin-left: 0.12em;
+  vertical-align: -0.08em;
+  background: var(--accent-bright);
+  box-shadow: 0 0 12px rgba(200, 225, 255, 0.55);
+}
+
+.hero__cursor--blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+.hero__lead {
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  opacity: 0;
+  animation: rise 0.85s var(--ease) 0.35s forwards;
+}
+
+.hero__actions {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: rise 0.85s var(--ease) 0.5s forwards;
+}
+
+.hero__proof {
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0;
+  animation: rise 0.85s var(--ease) 0.65s forwards;
+}
+
+.hero__portrait {
+  position: relative;
+  width: min(68vw, 260px);
+  aspect-ratio: 1;
+  margin: 0.75rem auto 0;
+  opacity: 0;
+  animation: rise 1s var(--ease) 0.25s forwards;
+}
+
+.hero__portrait-glow {
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110, 160, 220, 0.4), transparent 68%);
+  filter: blur(22px);
+  z-index: 0;
+  animation: glow-breathe 3.6s ease-in-out infinite;
+}
+
+.hero__portrait-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid var(--portrait-border);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 18px 50px rgba(0, 10, 30, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  filter: contrast(1.04) saturate(0.92);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.75fr);
+    gap: 2.5rem 2.5rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    text-align: left;
+    margin-inline: 0;
+  }
+
+  .hero__lead {
+    margin-inline: 0;
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .hero__portrait {
+    width: min(100%, 380px);
+    margin: 0 0 0 auto;
+    justify-self: end;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-breathe {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__status,
+  .hero__lead,
+  .hero__actions,
+  .hero__proof,
+  .hero__portrait {
+    opacity: 1;
+    animation: none;
+  }
+
+  .hero__portrait-glow,
+  .hero__cursor--blink {
+    animation: none;
+  }
+}

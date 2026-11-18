@@ -1,0 +1,130 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  padding: clamp(2.5rem, 6vw, 3.5rem) 0 1.75rem;
+  background:
+    linear-gradient(
+      0deg,
+      var(--hero-wash-a) 0%,
+      var(--hero-wash-b) 16%,
+      var(--hero-wash-c) 28%,
+      var(--hero-wash-d) 40%,
+      transparent 52%
+    ),
+    var(--footer-bg);
+}
+
+.footer__grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.1rem 1.75rem;
+  padding-bottom: 2rem;
+}
+
+.footer__brand-block {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.footer__brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.footer__brand:hover {
+  color: var(--accent-bright);
+}
+
+.footer__tag {
+  color: var(--text-muted);
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.footer__col {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.85rem 1rem;
+  flex: 0 0 auto;
+}
+
+.footer__heading {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  white-space: nowrap;
+  line-height: 1;
+  position: relative;
+  top: -0.05em;
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.65rem 1.15rem;
+}
+
+.footer__list a {
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: color 0.25s var(--ease);
+}
+
+.footer__list a:hover {
+  color: var(--text);
+}
+
+.footer__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer__bottom p {
+  margin: 0;
+}
+
+@media (min-width: 960px) {
+  .footer__grid {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 959px) {
+  .footer__col {
+    flex: 1 1 100%;
+  }
+}
